@@ -10,17 +10,17 @@ export const Contact = () => {
         {/* <!-- Contact Form --> */}
         <form>
           <div className="form-group">
-            <label for="name">Name:</label>
+            <label htmlFor="name">Name:</label>
             <input type="text" className="form-control" id="name" name="name" required/>
           </div>
 
           <div className="form-group">
-            <label for="email">Email:</label>
+            <label htmlFor="email">Email:</label>
             <input type="email" className="form-control" id="email" name="email" required/>
           </div>
 
           <div className="form-group">
-            <label for="message">Message:</label>
+            <label htmlFor="message">Message:</label>
             <textarea className="form-control" id="message" name="message" rows="4" required></textarea>
           </div>
 
