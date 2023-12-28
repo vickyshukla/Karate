@@ -1,23 +1,34 @@
-import React from 'react';
-import Hero from '../images/karate-men.png'
+
 
 export const Contact = () => {
   return (
     <div className="container mt-5" id='contact'>
-      <div className="row">
-        <div className="col-md-7 custom-hero">
-          <h1 className="hero_text">Contact Us</h1>
-          <p>Quisque leo augue, lobortis ac tellus nec, posuere  Praesent massa odio,
-               pellentesque in consectetur quis, volutpat sit amet erat..
-          </p>
-          <button type="button" class="btn btn-warning">Learn More</button>
-        </div>
-        <div className="col-md-5 hero-bg-col">
-          {/* <!-- Right side image --> */}
-          <img src={Hero} alt="Hero" className="img-fluid" />
-        </div>
+    <div className="row justify-content-center">
+      <div className="col-md-8">
+        <h2 className="mb-4">Contact Us</h2>
+
+        {/* <!-- Contact Form --> */}
+        <form>
+          <div className="form-group">
+            <label for="name">Name:</label>
+            <input type="text" className="form-control" id="name" name="name" required/>
+          </div>
+
+          <div className="form-group">
+            <label for="email">Email:</label>
+            <input type="email" className="form-control" id="email" name="email" required/>
+          </div>
+
+          <div className="form-group">
+            <label for="message">Message:</label>
+            <textarea className="form-control" id="message" name="message" rows="4" required></textarea>
+          </div>
+
+          <button type="submit" className="btn btn-primary">Submit</button>
+        </form>
       </div>
     </div>
+  </div>
   )
 }
 

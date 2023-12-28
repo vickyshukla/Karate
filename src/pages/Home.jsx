@@ -1,4 +1,3 @@
-import React from 'react';
 import Hero from '../images/karate-men.png'
 
 export const Home = () => {
@@ -10,7 +9,7 @@ export const Home = () => {
           <p>Quisque leo augue, lobortis ac tellus nec, posuere  Praesent massa odio,
                pellentesque in consectetur quis, volutpat sit amet erat..
           </p>
-          <button type="button" class="btn btn-warning">Learn More</button>
+          <button type="button" className="btn btn-warning">Learn More</button>
         </div>
         <div className="col-md-5 hero-bg-col">
           {/* <!-- Right side image --> */}

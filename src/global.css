@@ -12,6 +12,19 @@ code {
     monospace;
 }
 
-:root{
-  
+h5{
+  color: #f67a45!important;;
+}
+
+.bg_dark{
+  background-color: #2F2E2E;
+  display: block;
+  color:#F67A45;
+  border-radius: 4px;
+  padding: 8px;
+  width: 60%;
+  line-height: 2;
+}
+.bg_darkspan{
+  margin-right: 20px;
 }
