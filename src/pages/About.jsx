@@ -1,7 +1,7 @@
 import { Carousel } from "react-bootstrap";
-import karateOne from '../images/karate-1.jpg';
-import karateTwo from '../images/karate-2.jpg';
-import karateThree from '../images/karate-3.jpg';
+import karateFour from '../images/karate-4.jpg';
+import karateFive from '../images/karate-5.jpg';
+import karateSix from '../images/karate-6.jpg';
 
 
 export const About = () => {
@@ -14,7 +14,7 @@ export const About = () => {
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src={karateThree}
+                src={karateFour}
                 alt="First slide"
               />
               <Carousel.Caption>
@@ -28,7 +28,7 @@ export const About = () => {
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src={karateTwo}
+                src={karateFive}
                 alt="Second slide"
               />
               <Carousel.Caption>
@@ -40,7 +40,7 @@ export const About = () => {
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src={karateOne}
+                src={karateSix}
                 alt="Second slide"
               />
               <Carousel.Caption>

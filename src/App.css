@@ -1,42 +1,209 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo img{
-    width: 30px;
-    height: 30px;
+.logo img {
+  width: 30px;
+  height: 30px;
 }
 
-.custom-hero{
-    padding: 60px!important;
+.custom-hero {
+  padding: 60px !important;
 }
 
-.custom-hero h1{
-    font-size: 5rem;
+.custom-hero h1 {
+  font-size: 5rem;
 }
 
-.row .hero_text span{
-    color: #F73322;
+.row .hero_text span {
+  color: #f73322;
 }
 
-.row .hero-bg-col{
-    background: #262042;
-    padding: 40px;
-    border-top-left-radius: 145px;
-   border-bottom-left-radius: 145px;
-      border-top-right-radius: 0; 
-      border-bottom-right-radius: 145px;
-   
+.row .hero-bg-col {
+  background: #262042;
+  padding: 40px;
+  border-top-left-radius: 145px;
+  border-bottom-left-radius: 145px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 145px;
 }
 
-.row{
-    justify-content: center;
-    
+.row {
+  justify-content: center;
 }
 
-#about,#home,#contact,#program{
-    padding-top: 100px!important;
-    padding-bottom: 50px;
+#about,
+#home,
+#contact,
+#program {
+  padding-top: 100px !important;
+  padding-bottom: 50px;
+}
+
+/* about */
+
+.d-block {
+  display: block !important;
+  height: 414px;
+  border-radius: 15px;
+}
+
+/* Program component styles */
+
+.main {
+  max-width: 75rem;
+  padding: 3em 1.5em;
+  border-radius: 15px;
+}
+
+.main__heading {
+  font-weight: 600;
+  font-size: 2.25em;
+  margin-bottom: 0.75em;
+  text-align: center;
+}
+
+.cards {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.cards__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5em;
+}
+
+.card {
+  --flow-space: 0.5em;
+  --hsl: var(--hue), var(--saturation), var(--lightness);
+  flex: 1 1 14rem;
+  padding: 1.5em 2em;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  align-items: start;
+  gap: 1.25em;
+  color: #eceff1;
+  background: rgba(207, 42, 42, 0.1) !important;
+  border: 1px solid #eceff133;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.card__bullets {
+  line-height: 1.4;
+}
+
+.card__bullets li::before {
+  display: inline-block;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='16' title='check' fill='%23dddddd'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' /%3E%3C/svg%3E");
+  transform: translatey(0.25ch);
+  margin-right: 1ch;
+}
+
+.card__heading {
+  font-size: 1.05em;
+  font-weight: 600;
+}
+
+.card__price {
+  font-size: 1.75em;
+  font-weight: 700;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1.25em);
+}
+
+/* TestimonialPage.css */
+
+.testimonial-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.testmonial_heading {
+  margin: 40px 0;
+}
+
+.testimonial {
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #4f4848;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.testimonial-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.testimonial-text {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.testimonial-author {
+  font-weight: bold;
+}
+
+
+
+/* Footer.css */
+.footer {
+  position: relative;
+  padding: 40px 0;
+  background-color: #333;
+  color: #fff;
+}
+
+.footer h2 {
+  color: #fff;
+}
+
+.footer p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.footer button {
+  margin-top: 20px;
+}
+
+.footer hr {
+  border-color: #555;
+}
+
+.footer .text-muted {
+  font-size: 14px;
+}
+
+.footer a {
+  color: #fff;
+}
+
+/* Add the following styles for the rounded red section at the bottom */
+.footer-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ff0000; /* Red color */
+  height: 50px; /* Adjust the height as needed */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }

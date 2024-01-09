@@ -1,5 +1,5 @@
 
-import Logo from '../images/logo.jpg';
+import Logo from '../images/logo-bg.png';
 
 
 const Navbar = () => {
