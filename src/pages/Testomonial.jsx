@@ -1,20 +1,30 @@
 // TestimonialPage.js
 
-import { useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { gsap } from "../animations/gsap";
+import karateOne from '../images/karate-1.jpg';
+import karateTwo from '../images/karate-2.jpg';
+import karateThree from '../images/karate-3.jpg';
 
 
 const testimonialsData = [
   {
     id: 1,
-    name: 'John Doe',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: 'https://placekitten.com/100/100', // Replace with the actual image URL
+    name: 'Riya Sharma',
+    text: 'The beginner program helped me feel stronger in just a few weeks. The coaches keep every class focused and supportive.',
+    image: karateOne,
   },
   {
     id: 2,
-    name: 'Jane Smith',
-    text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    image: 'https://placekitten.com/100/101', // Replace with the actual image URL
+    name: 'Daniel Lee',
+    text: 'I joined for fitness, but I stayed for the community. The sparring sessions are safe and incredibly motivating.',
+    image: karateTwo,
+  },
+  {
+    id: 3,
+    name: 'Anita Desai',
+    text: 'The self-defense classes are practical and empowering. I feel more confident commuting alone at night.',
+    image: karateThree,
   },
   // Add more testimonials as needed
 ];
@@ -22,6 +32,7 @@ const testimonialsData = [
 export const TestimonialPage = () => {
   const [testimonials, ] = useState(testimonialsData);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const testimonialRef = useRef(null);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -35,16 +46,47 @@ export const TestimonialPage = () => {
     };
   }, [testimonials]);
 
+  useEffect(() => {
+    if (!gsap) {
+      return;
+    }
+    const ctx = gsap.context(() => {
+      gsap.from(".testimonial-card", {
+        scrollTrigger: {
+          trigger: ".testimonial-section",
+          start: "top 80%",
+        },
+        opacity: 0,
+        y: 24,
+        duration: 0.7,
+      });
+    }, testimonialRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="testimonial-container container">
-        <h2 className='testmonial_heading'>What our student say about us</h2>
-      <div className="testimonial">
-        <img src={testimonials[currentIndex].image} alt={`Image of ${testimonials[currentIndex].name}`} className="testimonial-image" />
-        <p className="testimonial-text">{testimonials[currentIndex].text}</p>
-        <p className="testimonial-author">- {testimonials[currentIndex].name}</p>
+    <section className="testimonial-section" id="testimonials" ref={testimonialRef}>
+      <div className="container testimonial-container">
+          <h2 className='testmonial_heading'>What our students say about us</h2>
+        <div className="testimonial-card">
+          <div className="testimonial-avatar">
+            <img src={testimonials[currentIndex].image} alt={`Image of ${testimonials[currentIndex].name}`} />
+          </div>
+          <p className="testimonial-text">{testimonials[currentIndex].text}</p>
+          <p className="testimonial-author">- {testimonials[currentIndex].name}</p>
+        </div>
+        <div className="testimonial-dots">
+          {testimonials.map((item, index) => (
+            <button
+              key={item.id}
+              className={`dot ${index === currentIndex ? "active" : ""}`}
+              aria-label={`View testimonial from ${item.name}`}
+              onClick={() => setCurrentIndex(index)}
+            ></button>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
-
-
