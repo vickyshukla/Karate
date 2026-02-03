@@ -74,6 +74,39 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+.hero-title span {
+  color: #f4c542;
+}
+
+.hero-copy {
+  margin-top: 18px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.hero-highlights {
+  display: flex;
+  gap: 24px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.hero-highlights h4 {
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.hero-highlights p {
+  margin-bottom: 0;
+  color: #d1d1d1;
+}
+
 .hero-actions {
   display: flex;
   align-items: center;
@@ -120,18 +153,20 @@
 }
 
 #about,
+#home,
+#contact,
 #program,
 #instructors,
 #schedule,
 #testimonials,
 #faq {
-  padding-top: 100px;
-  padding-bottom: 90px;
+  padding-top: 100px !important;
+  padding-bottom: 50px;
 }
 
 .section-heading {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .section-heading h2 {
@@ -140,8 +175,8 @@
 
 .section-subtitle {
   text-align: center;
-  margin-bottom: 40px;
-  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 30px;
+  color: #d6d6d6;
 }
 
 /* about */
@@ -280,13 +315,95 @@
   gap: 8px;
 }
 
-.testimonial-dots .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(255, 255, 255, 0.3);
+/* Instructors */
+.instructor-card {
+  background: #1f1b2e;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  height: 100%;
 }
+
+.instructor-card .card-img-top {
+  height: 240px;
+  object-fit: cover;
+}
+
+.instructor-card .card-title {
+  font-weight: 700;
+}
+
+.instructor-card .card-subtitle {
+  color: #f4c542;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* Schedule */
+.schedule-table {
+  background: #1f1b2e;
+  border-radius: 16px;
+  padding: 20px;
+  display: grid;
+  gap: 12px;
+}
+
+.schedule-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.schedule-day {
+  font-weight: 700;
+  min-width: 120px;
+}
+
+.schedule-note {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* FAQ */
+.faq-section .accordion-item {
+  background: #1f1b2e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.faq-section .accordion-button {
+  background: #1f1b2e;
+  color: #fff;
+}
+
+.faq-section .accordion-button:not(.collapsed) {
+  background: #2a2440;
+  color: #fff;
+}
+
+/* Contact */
+.contact-section .contact-card {
+  background: #2a2440;
+  color: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  height: 100%;
+}
+
+.contact-section .contact-label {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.contact-section .contact-card ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
 
 .testimonial-dots .dot.active {
   background: #f4c542;
@@ -483,27 +600,14 @@
   flex-wrap: wrap;
 }
 
-.footer-newsletter {
-  display: flex;
-  gap: 10px;
-  margin-top: 16px;
-}
-
-.footer-newsletter input {
-  flex: 1;
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: transparent;
-  color: #fff;
-}
-
-@media (max-width: 992px) {
-  .custom-hero {
-    padding-right: 0;
-  }
-
-  .hero-section {
-    padding-top: 140px;
-  }
+/* Add the following styles for the rounded red section at the bottom */
+.footer-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ff0000; /* Red color */
+  height: 50px; /* Adjust the height as needed */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }

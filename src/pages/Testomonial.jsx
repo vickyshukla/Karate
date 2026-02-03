@@ -1,7 +1,6 @@
 // TestimonialPage.js
 
-import { useEffect, useRef, useState } from 'react';
-import { gsap } from "../animations/gsap";
+import { useState, useEffect } from 'react';
 import karateOne from '../images/karate-1.jpg';
 import karateTwo from '../images/karate-2.jpg';
 import karateThree from '../images/karate-3.jpg';
@@ -66,27 +65,14 @@ export const TestimonialPage = () => {
   }, []);
 
   return (
-    <section className="testimonial-section" id="testimonials" ref={testimonialRef}>
-      <div className="container testimonial-container">
-          <h2 className='testmonial_heading'>What our students say about us</h2>
-        <div className="testimonial-card">
-          <div className="testimonial-avatar">
-            <img src={testimonials[currentIndex].image} alt={`Image of ${testimonials[currentIndex].name}`} />
-          </div>
-          <p className="testimonial-text">{testimonials[currentIndex].text}</p>
-          <p className="testimonial-author">- {testimonials[currentIndex].name}</p>
-        </div>
-        <div className="testimonial-dots">
-          {testimonials.map((item, index) => (
-            <button
-              key={item.id}
-              className={`dot ${index === currentIndex ? "active" : ""}`}
-              aria-label={`View testimonial from ${item.name}`}
-              onClick={() => setCurrentIndex(index)}
-            ></button>
-          ))}
-        </div>
+    <section className="testimonial-container container" id="testimonials">
+        <h2 className='testmonial_heading'>What our students say about us</h2>
+      <div className="testimonial">
+        <img src={testimonials[currentIndex].image} alt={`Image of ${testimonials[currentIndex].name}`} className="testimonial-image" />
+        <p className="testimonial-text">{testimonials[currentIndex].text}</p>
+        <p className="testimonial-author">- {testimonials[currentIndex].name}</p>
       </div>
     </section>
   );
 };
+

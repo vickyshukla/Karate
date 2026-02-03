@@ -1,6 +1,3 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "../animations/gsap";
-
 const schedule = [
   {
     day: "Monday",
@@ -29,50 +26,26 @@ const schedule = [
 ];
 
 export const Schedule = () => {
-  const scheduleRef = useRef(null);
-
-  useEffect(() => {
-    if (!gsap) {
-      return;
-    }
-    const ctx = gsap.context(() => {
-      gsap.from(".schedule-section .schedule-row", {
-        scrollTrigger: {
-          trigger: ".schedule-section",
-          start: "top 80%",
-        },
-        opacity: 0,
-        y: 24,
-        duration: 0.7,
-        stagger: 0.15,
-      });
-    }, scheduleRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section className="schedule-section" id="schedule" ref={scheduleRef}>
-      <div className="container">
-        <div className="section-heading">
-          <h2>Weekly Schedule</h2>
-          <p>
-            Classes are organized by experience level and age. Join any session or
-            request a custom training plan.
-          </p>
-        </div>
-        <div className="schedule-table">
-          {schedule.map((item) => (
-            <div className="schedule-row" key={item.day}>
-              <div className="schedule-day">{item.day}</div>
-              <div className="schedule-classes">{item.classes}</div>
-            </div>
-          ))}
-        </div>
-        <div className="schedule-note">
-          <strong>Need flexibility?</strong> Private coaching and corporate safety
-          workshops are available by appointment.
-        </div>
+    <section className="container mt-5 schedule-section" id="schedule">
+      <div className="section-heading">
+        <h2>Weekly Schedule</h2>
+        <p>
+          Classes are organized by experience level and age. Join any session or
+          request a custom training plan.
+        </p>
+      </div>
+      <div className="schedule-table">
+        {schedule.map((item) => (
+          <div className="schedule-row" key={item.day}>
+            <div className="schedule-day">{item.day}</div>
+            <div className="schedule-classes">{item.classes}</div>
+          </div>
+        ))}
+      </div>
+      <div className="schedule-note">
+        <strong>Need flexibility?</strong> Private coaching and corporate safety
+        workshops are available by appointment.
       </div>
     </section>
   );

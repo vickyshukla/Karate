@@ -6,8 +6,8 @@ export const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footer-top">
-          <div>
+        <div className="row">
+          <div className="col-lg-4 mb-4">
             <h2 className="font-weight-bold">Karate Academy</h2>
             <p>
               Elevate your discipline, confidence, and strength through
@@ -15,7 +15,7 @@ export const Footer = () => {
             </p>
             <button className="btn btn-primary">Schedule a Visit</button>
           </div>
-          <div>
+          <div className="col-lg-4 mb-4">
             <h4>Quick Links</h4>
             <ul className="footer-links">
               <li><a href="#about">About</a></li>
@@ -25,17 +25,13 @@ export const Footer = () => {
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
-          <div>
+          <div className="col-lg-4 mb-4">
             <h4>Stay Connected</h4>
             <p>Follow us for training tips and upcoming events.</p>
             <div className="footer-socials">
               <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
               <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
               <a href="https://youtube.com" target="_blank" rel="noreferrer">YouTube</a>
-            </div>
-            <div className="footer-newsletter">
-              <input type="email" placeholder="Email address" />
-              <button className="btn btn-outline-light">Subscribe</button>
             </div>
           </div>
         </div>
