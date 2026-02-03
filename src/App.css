@@ -74,6 +74,16 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+.hero-title span {
+  color: #f4c542;
+}
+
+.hero-copy {
+  margin-top: 18px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .hero-actions {
   display: flex;
   align-items: center;
@@ -97,13 +107,12 @@
   color: #d1d1d1;
 }
 
-.row .hero-bg-col {
-  background: #262042;
-  padding: 40px;
-  border-top-left-radius: 145px;
-  border-bottom-left-radius: 145px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 145px;
+.hero-actions {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .hero-stats {

@@ -4,10 +4,6 @@
 
 
 export const Program = () => {
-  
-
-    
- 
   return (
     <main className="main flow container" id="program">
       <h2 className="main__heading">Courses & Plans</h2>
