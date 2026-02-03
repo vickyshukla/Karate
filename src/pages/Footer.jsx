@@ -7,19 +7,41 @@ export const Footer = () => {
     <footer className="footer">
       <div className="container">
         <div className="row">
-          <div className="col-md-6">
-            <h2 className="font-weight-bold">Footer Heading</h2>
-            <p>Some descriptive text goes here.</p>
-            <button className="btn btn-primary">Centered Button</button>
+          <div className="col-lg-4 mb-4">
+            <h2 className="font-weight-bold">Karate Academy</h2>
+            <p>
+              Elevate your discipline, confidence, and strength through
+              structured martial arts training led by certified instructors.
+            </p>
+            <button className="btn btn-primary">Schedule a Visit</button>
+          </div>
+          <div className="col-lg-4 mb-4">
+            <h4>Quick Links</h4>
+            <ul className="footer-links">
+              <li><a href="#about">About</a></li>
+              <li><a href="#program">Programs</a></li>
+              <li><a href="#instructors">Instructors</a></li>
+              <li><a href="#schedule">Schedule</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div className="col-lg-4 mb-4">
+            <h4>Stay Connected</h4>
+            <p>Follow us for training tips and upcoming events.</p>
+            <div className="footer-socials">
+              <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+              <a href="https://youtube.com" target="_blank" rel="noreferrer">YouTube</a>
+            </div>
           </div>
         </div>
         <hr className="my-4" />
         <div className="row">
           <div className="col-md-6">
-            <p className="text-muted">© 2024 Your Company, Inc.</p>
+            <p className="text-muted">© 2024 Karate Academy. All rights reserved.</p>
           </div>
           <div className="col-md-6 text-md-right">
-            <p className="text-muted">Site Map | Privacy Policy | Terms of Service</p>
+            <p className="text-muted">Safety Policy | Privacy Policy | Terms of Service</p>
           </div>
         </div>
       </div>
@@ -27,4 +49,3 @@ export const Footer = () => {
     </footer>
   );
 };
-
