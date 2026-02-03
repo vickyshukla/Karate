@@ -60,8 +60,9 @@ export const Program = () => {
         </div>
 
         
+        </div>
       </div>
-    </main>
+    </section>
   );
 };
 

@@ -1,6 +1,33 @@
-import Hero from '../images/karate-men.png'
+import { useEffect, useRef } from "react";
+import { gsap } from "../animations/gsap";
+import Hero from "../images/karate-men.png";
 
 export const Home = () => {
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    if (!gsap) {
+      return;
+    }
+    const ctx = gsap.context(() => {
+      const timeline = gsap.timeline();
+      timeline
+        .from(".hero-badge", { opacity: 0, y: 20, duration: 0.6 })
+        .from(".hero-title", { opacity: 0, y: 30, duration: 0.8 }, "-=0.3")
+        .from(".hero-copy", { opacity: 0, y: 30, duration: 0.8 }, "-=0.5")
+        .from(".hero-actions", { opacity: 0, y: 20, duration: 0.6 }, "-=0.4")
+        .from(".hero-stats .stat-card", {
+          opacity: 0,
+          y: 20,
+          duration: 0.6,
+          stagger: 0.15,
+        })
+        .from(".hero-image", { opacity: 0, x: 40, duration: 0.8 }, "-=0.6");
+    }, heroRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <div className="container mt-5" id='home'>
       <div className="row">
@@ -34,6 +61,6 @@ export const Home = () => {
           <img src={Hero} alt="Hero" className="img-fluid" />
         </div>
       </div>
-    </div>
+    </section>
   )
 }

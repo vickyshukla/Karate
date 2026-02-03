@@ -45,7 +45,6 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="footer-bottom"></div>
     </footer>
   );
 };

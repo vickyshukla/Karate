@@ -31,6 +31,7 @@ const testimonialsData = [
 export const TestimonialPage = () => {
   const [testimonials, ] = useState(testimonialsData);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const testimonialRef = useRef(null);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -43,6 +44,25 @@ export const TestimonialPage = () => {
       clearInterval(intervalId);
     };
   }, [testimonials]);
+
+  useEffect(() => {
+    if (!gsap) {
+      return;
+    }
+    const ctx = gsap.context(() => {
+      gsap.from(".testimonial-card", {
+        scrollTrigger: {
+          trigger: ".testimonial-section",
+          start: "top 80%",
+        },
+        opacity: 0,
+        y: 24,
+        duration: 0.7,
+      });
+    }, testimonialRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section className="testimonial-container container" id="testimonials">

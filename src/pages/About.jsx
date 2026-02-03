@@ -1,12 +1,37 @@
+import { useEffect, useRef } from "react";
 import { Carousel } from "react-bootstrap";
+import { gsap } from "../animations/gsap";
 import karateFour from '../images/karate-4.jpg';
 import karateFive from '../images/karate-5.jpg';
 import karateSix from '../images/karate-6.jpg';
 
 
 export const About = () => {
+  const aboutRef = useRef(null);
+
+  useEffect(() => {
+    if (!gsap) {
+      return;
+    }
+    const ctx = gsap.context(() => {
+      gsap.from(".about-section .reveal", {
+        scrollTrigger: {
+          trigger: ".about-section",
+          start: "top 80%",
+        },
+        opacity: 0,
+        y: 24,
+        duration: 0.8,
+        stagger: 0.2,
+      });
+    }, aboutRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="container mt-5" id="about">
+    <section className="about-section" id="about" ref={aboutRef}>
+      <div className="container">
       <div className="row">
         {/* Carousel on the left */}
         <div className="col-md-6">
@@ -72,6 +97,7 @@ export const About = () => {
           {/* Add more content as needed */}
         </div>
       </div>
-    </div>
+      </div>
+    </section>
   );
 };

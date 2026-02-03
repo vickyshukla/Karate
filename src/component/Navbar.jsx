@@ -5,9 +5,9 @@ import Logo from '../images/logo-bg.png';
 const Navbar = () => {
     return (
         <>
-            <nav className="navbar container navbar-expand-lg navbar-light bg-light fixed-top">
+            <nav className="navbar container navbar-expand-lg navbar-dark fixed-top navbar-glass">
                 <div className="container-fluid">
-                    <a href='#'  className="navbar-brand logo">
+                    <a href='#home'  className="navbar-brand logo">
                         <img src={Logo} alt="Logo" />
                     </a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
