@@ -9,14 +9,13 @@ export const Program = () => {
     
  
   return (
-    <section className="program-section" id="program">
-      <div className="container">
-        <h2 className="main__heading">Courses & Plans</h2>
-        <p className="section-subtitle">
-          Choose a plan that fits your goals. Every membership includes progress
-          tracking, belt evaluations, and access to our dojo community.
-        </p>
-        <div className="main__cards cards" >
+    <main className="main flow container" id="program">
+      <h2 className="main__heading">Courses & Plans</h2>
+      <p className="section-subtitle">
+        Choose a plan that fits your goals. Every membership includes progress
+        tracking, belt evaluations, and access to our dojo community.
+      </p>
+      <div className="main__cards cards" >
         <div className="cards__inner">
           {/* Card 1 */}
           <div className="cards__card card">
@@ -66,3 +65,4 @@ export const Program = () => {
     </section>
   );
 };
+

@@ -1,6 +1,3 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "../animations/gsap";
-
 const faqItems = [
   {
     id: "faqOne",
@@ -29,61 +26,37 @@ const faqItems = [
 ];
 
 export const Faq = () => {
-  const faqRef = useRef(null);
-
-  useEffect(() => {
-    if (!gsap) {
-      return;
-    }
-    const ctx = gsap.context(() => {
-      gsap.from(".faq-section .accordion-item", {
-        scrollTrigger: {
-          trigger: ".faq-section",
-          start: "top 80%",
-        },
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        stagger: 0.15,
-      });
-    }, faqRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section className="faq-section" id="faq" ref={faqRef}>
-      <div className="container">
-        <div className="section-heading">
-          <h2>Frequently Asked Questions</h2>
-          <p>Everything you need to know before stepping onto the mat.</p>
-        </div>
-        <div className="accordion" id="faqAccordion">
-          {faqItems.map((item, index) => (
-            <div className="accordion-item" key={item.id}>
-              <h2 className="accordion-header" id={`${item.id}-heading`}>
-                <button
-                  className={`accordion-button ${index === 0 ? "" : "collapsed"}`}
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target={`#${item.id}-collapse`}
-                  aria-expanded={index === 0}
-                  aria-controls={`${item.id}-collapse`}
-                >
-                  {item.question}
-                </button>
-              </h2>
-              <div
-                id={`${item.id}-collapse`}
-                className={`accordion-collapse collapse ${index === 0 ? "show" : ""}`}
-                aria-labelledby={`${item.id}-heading`}
-                data-bs-parent="#faqAccordion"
+    <section className="container mt-5 faq-section" id="faq">
+      <div className="section-heading">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know before stepping onto the mat.</p>
+      </div>
+      <div className="accordion" id="faqAccordion">
+        {faqItems.map((item, index) => (
+          <div className="accordion-item" key={item.id}>
+            <h2 className="accordion-header" id={`${item.id}-heading`}>
+              <button
+                className={`accordion-button ${index === 0 ? "" : "collapsed"}`}
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target={`#${item.id}-collapse`}
+                aria-expanded={index === 0}
+                aria-controls={`${item.id}-collapse`}
               >
-                <div className="accordion-body">{item.answer}</div>
-              </div>
+                {item.question}
+              </button>
+            </h2>
+            <div
+              id={`${item.id}-collapse`}
+              className={`accordion-collapse collapse ${index === 0 ? "show" : ""}`}
+              aria-labelledby={`${item.id}-heading`}
+              data-bs-parent="#faqAccordion"
+            >
+              <div className="accordion-body">{item.answer}</div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -81,21 +81,19 @@ export const About = () => {
 
         {/* Content on the right */}
         <div className="col-md-6 content-normal">
-          <h5 className="reveal">About Us</h5>
-          <h2 className="mt-3 reveal">
+          <h5>About Us</h5>
+          <h2 className="mt-3">
             We Are a Modern
             <br /> Martial Arts School
           </h2>
-          <p className="mt-3 reveal">
+          <p className="mt-3">
             Our dojo blends traditional values with contemporary training.
             Whether you want fitness, self-defense, or competitive skills, we
             build a plan that fits your lifestyle.
           </p>
-          <div className="about-list reveal">
-            <p className="bg_dark"><span className="bg_darkspan">01</span>Personalized progress plans</p>
-            <p className="bg_dark"><span className="bg_darkspan">02</span>Certified black belt instructors</p>
-            <p className="bg_dark"><span className="bg_darkspan">03</span>Family-friendly and inclusive environment</p>
-          </div>
+          <p className="bg_dark"><span className="bg_darkspan">01</span>Personalized progress plans</p>
+          <p className="bg_dark"><span className="bg_darkspan">02</span>Certified black belt instructors</p>
+          <p className="bg_dark"><span className="bg_darkspan">03</span>Family-friendly and inclusive environment</p>
           {/* Add more content as needed */}
         </div>
       </div>
